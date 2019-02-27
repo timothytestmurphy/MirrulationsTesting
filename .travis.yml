@@ -2,11 +2,12 @@ language: python
 python: 3.7.2
 dist: xenial
 sudo: true
+install:
+  -python3 -m venv .env
+  -source .env/bin/activate
+  -pip install -r requirements.txt
+  pip install -e .
 jobs:
   include:
-    - stage: Setup and Run Tests
-      script: python3 -m venv .env
-      script: source .env/bin/activate
-      script: pip install -r requirements.txt
-      script: pip install -e .
+    - stage: Run Tests
       script: pytest
