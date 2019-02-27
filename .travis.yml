@@ -4,22 +4,13 @@ dist: xenial
 sudo: true
 jobs:
   include:
-    stage: Setup Virtual Environment
-    script:
-      python3 -m venv .env
-  include:
-    stage: Enter Virtual Environment
-    script:
-      source .env/bin/activate
-  include:
-    stage: Install requirements
-    script:
-      pip install -r requirements.txt
-  include:
-    stage: Make editable install of current directory
-    script:
-      pip install -e .
-  include:
-    stage: Run tests
-    script:
-      pytest
+    - stage: Setup Virtual Environment
+      script: python3 -m venv .env
+    - stage: Enter Virtual Environment
+      script: source .env/bin/activate
+    - stage: Install requirements
+      script: pip install -r requirements.txt
+    - stage: Make editable install of current directory
+      script: pip install -e .
+    - stage: Run tests
+      script: pytest
