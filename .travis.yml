@@ -2,7 +2,6 @@ language: python
 python: 3.7.2
 dist: xenial
 sudo: true
-cache: pip
 jobs:
   include:
     stage: Setup Virtual Environment
