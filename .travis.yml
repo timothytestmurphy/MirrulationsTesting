@@ -4,7 +4,7 @@ dist: xenial
 sudo: true
 install:
   - pip install -r requirements.txt
-  - pip install .
+  - pip install -e .
 jobs:
   include:
     - stage: Run Tests
