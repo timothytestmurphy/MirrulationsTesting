@@ -6,8 +6,6 @@ Then, make a virtual environment with `python3 -m venv .env'
 
 Enter the environment with `source .env/bin/activate`
 
-Run `pip install -r requirements.txt`
-
 Run `pip install -e .`
 
 You can now run `pytest` and ensure that tests are passing.
