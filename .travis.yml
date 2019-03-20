@@ -8,3 +8,7 @@ jobs:
   include:
     - stage: Run Tests
       script: pytest
+    - stage: Run coverage
+      script: pytest --cov=pathing tests/
+    - stage: Run linter
+      script: pylint pathing
